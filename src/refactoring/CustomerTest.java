@@ -50,4 +50,14 @@ public class CustomerTest {
 
         assertEquals(correctStatement, customer.statement());
     }
+
+    @Test
+    void htmlStatement() {
+        customer.addRental(rental);
+        String statement = "<h1>Rentals for <em>" + customer.getName() + "</em></h1><p>\n"
+                + "Harry Potter: 20.0<br>\n"
+                + "</p>You owed <em>20.0</em><p>\n"
+                + "On this rental you earned <em>1</em> frequent renter points</p>";
+        assertEquals(statement, customer.htmlStatement());
+    }
 }
