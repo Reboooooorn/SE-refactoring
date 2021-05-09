@@ -1,16 +1,21 @@
 package refactoring;
 
+import refactoring.price.ChildernsPrice;
+import refactoring.price.NewReleasePrice;
+import refactoring.price.Price;
+import refactoring.price.RegularPrice;
+
 public class Movie {
     public static final int CHILDRENS = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
 
     private String movieTitle;
-    private int moviePriceCode;
+    private Price price;
 
     public Movie(String movieTitle, int moviePriceCode) {
         this.movieTitle = movieTitle;
-        this.moviePriceCode = moviePriceCode;
+        setMoviePriceCode(moviePriceCode);
     }
 
     public double getAmount(int daysRented){
@@ -42,11 +47,23 @@ public class Movie {
     }
 
     public int getMoviePriceCode() {
-        return moviePriceCode;
+        return price.getPriceCode();
     }
 
-    public void setMoviePriceCode(int arg) {
-        moviePriceCode = arg;
+    public void setMoviePriceCode(int priceCode) {
+        switch (priceCode) {
+            case REGULAR:
+                price = new RegularPrice();
+                break;
+            case CHILDRENS:
+                price = new ChildernsPrice();
+                break;
+            case NEW_RELEASE:
+                price = new NewReleasePrice();
+                break;
+            default:
+                throw new IllegalArgumentException("Incorrect Price Code");
+        }
     }
 
     public String getTitle (){

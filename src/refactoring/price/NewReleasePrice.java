@@ -1,2 +1,10 @@
-package refactoring.price;public class NewReleasePrice {
+package refactoring.price;
+
+import refactoring.Movie;
+
+public class NewReleasePrice extends Price{
+    @Override
+    public int getPriceCode() {
+        return Movie.NEW_RELEASE;
+    }
 }
