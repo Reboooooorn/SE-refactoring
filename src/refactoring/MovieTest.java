@@ -17,13 +17,13 @@ public class MovieTest {
 
     @Test
     void getPriceCode() {
-        assertEquals(PRICECODE, movie.getPriceCode());
+        assertEquals(PRICECODE, movie.getMoviePriceCode());
     }
 
     @Test
     void setPriceCode() {
-        movie.setPriceCode(0);
-        assertEquals(0, movie.getPriceCode());
+        movie.setMoviePriceCode(0);
+        assertEquals(0, movie.getMoviePriceCode());
     }
 
     @Test
