@@ -19,23 +19,7 @@ public class Movie {
     }
 
     public double getAmount(int daysRented){
-        double currentAmount = 0;
-        switch (this.getMoviePriceCode()) {
-            case Movie.REGULAR:
-                currentAmount += 2;
-                if (daysRented > 2)
-                    currentAmount += (daysRented - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                currentAmount += daysRented * 3;
-                break;
-            case Movie.CHILDRENS:
-                currentAmount += 1.5;
-                if (daysRented > 3)
-                    currentAmount += (daysRented - 3) * 1.5;
-                break;
-        }
-        return currentAmount;
+        return price.getCharge(daysRented);
     }
 
     public int getFrequentRenterPoints(int daysRented) {
