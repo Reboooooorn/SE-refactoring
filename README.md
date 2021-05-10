@@ -1,0 +1,1 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c8cea800c892480fa61530bb583ed562)](https://www.codacy.com/gh/Reboooooorn/SE-refactoring/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Reboooooorn/SE-refactoring&amp;utm_campaign=Badge_Grade)
